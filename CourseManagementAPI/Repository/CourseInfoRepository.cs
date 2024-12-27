@@ -17,9 +17,19 @@ namespace CourseManagementAPI.Repository
         {
             try
             {
-                _appDbContext.CourseInfoSubscriber.AddRangeAsync(courses);
-                _appDbContext.SaveChanges();
-                return true;
+               await _appDbContext.CourseInfoSubscriber.AddRangeAsync(courses);
+
+                var result = await _appDbContext.SaveChangesAsync();
+                // return result;
+
+                if(result > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
 
             }

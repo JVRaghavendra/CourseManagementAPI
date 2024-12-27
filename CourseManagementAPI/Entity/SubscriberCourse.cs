@@ -20,3 +20,17 @@ namespace CourseManagementAPI.Entity
 }
 
 
+//public int SubscriberID { get; set; }
+//public int TranscriptID { get; set; }
+//public int LearnerID { get; set; }
+//public string PeopleKey { get; set; }
+//public string CourseID { get; set; }
+//public string SessionID { get; set; }
+//public string Status { get; set; }
+//public DateTime CompletionDate { get; set; }
+//public string SourceID { get; set; }
+//public string SourceName { get; set; }
+//public DateTime SubscribedDateTime { get; set; }
+//public string Payload { get; set; }
+//public bool IsProcessed { get; set; }
+

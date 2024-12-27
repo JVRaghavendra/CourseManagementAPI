@@ -17,7 +17,7 @@ namespace CourseManagementAPI.Controllers
         }
         [HttpPost]
         [Route("AddCourseInfoAsync")]
-        public IActionResult Post([FromBody] CourseInfoModel courseInfoModel)
+        public async Task<IActionResult> Post([FromBody] List<CourseInfoModel> courseInfoModel)
         {
             try
             {
@@ -26,9 +26,11 @@ namespace CourseManagementAPI.Controllers
                     return StatusCode(StatusCodes.Status400BadRequest, ModelState);
                 }
 
-                var cources = _courseInfoService.AddCourseInfoAsync(new List<CourseInfoModel> { courseInfoModel });
+                var cources = await _courseInfoService.AddCourseInfoAsync(courseInfoModel);
 
-                return StatusCode(StatusCodes.Status201Created, "course Details Added Succesfully");
+                return Ok(cources);
+
+                // return StatusCode(StatusCodes.Status201Created, "course Details Added Succesfully");
             }
             catch (Exception)
             {
