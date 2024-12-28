@@ -23,6 +23,8 @@ namespace CourseManagementAPI.Service
 
                 foreach (var model in courseInfoModels)
                 {
+
+
                     var entity = new CourseInfo();
 
                     {
@@ -31,6 +33,8 @@ namespace CourseManagementAPI.Service
                         entity.CourseName = model.CourseName;
                         entity.CourseType = model.CourseType;
                         entity.CourseHours = model.CourseHours ?? 0; // Default to 0 if null
+                        //entity.CourseHours = model.CourseHours.HasValue ? Convert.ToDecimal(model.CourseHours.Value) : 0m;
+
                         entity.ContentLevel = model.ContentLevel;
                         entity.SessionID = model.SessionID;
                         entity.CurriculumDispCat = model.CurriculumDispCat;
